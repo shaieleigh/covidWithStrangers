@@ -1,0 +1,27 @@
+extends layout.pug
+
+include includes/auth-input.pug
+    
+append head
+  link(rel="stylesheet" href="public/css/signup-form.css" type="text/css")
+  script(src='/public/js/signup.js' type='module' defer)
+
+block content
+  .main-container
+    .sign-up-div
+      p.sign-up-text Sign up for Covid With Stalkers!!
+      br
+      p.description-text Millions of strangers across the world have sat together for conversations. Create an account and you'll be on your way to join the community.
+      br
+    .form-container
+      form#signup-form(action='/' method='POST')
+        ul#errors-container
+        input.form-input(type="hidden" name="_csrf" value=csrfToken)
+        input.form-input(type="text" name='email' required placeholder='    Email Address')
+        input.form-input(type="text" name='userName' required placeholder='    User Name')
+        input.form-input(type="text" name='fullName' required placeholder='    Your Name or Nickname')
+        input.form-input(type="password" name='password' required placeholder='    Password')
+        input.form-input(type="password" name='password2' required placeholder='    Confirm Password')
+        button.button(type='submit') Meet A Stranger!
+        a.already(href="/login") If you've already done this before, click here to log in
+    
