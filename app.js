@@ -7,7 +7,7 @@ const pagesRouter = require('./routes/pages');
 
 app.set('view engine', 'pug');
 
-// app.use(csrfProtection);
+// app.use(csrfProtection);   
 app.use(morgan('dev'));
 app.use(require('cookie-parser')());
 app.use(express.json());

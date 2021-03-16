@@ -19,7 +19,7 @@ router.post('/hostEvent', routeHandler(async (req, res, next) => {
         date,
         time,
         userId: null,
-        hostId,
+        hostId,   
         capacity,
         description
     })
